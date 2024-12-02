@@ -16,7 +16,9 @@
 
 <div sec:authentication="principal"></div>
 <div sec:authentication="principal.username"></div>
-<div sec:authentication="isAnonymous()"></div>
-<h4>이 유저는 일반유저 권한임</h4>
+<div sec:authorize="isAnonymous()">
+    <h4>이 유저는 일반유저 권한임</h4>
+</div>
+
 </body>
 </html>
