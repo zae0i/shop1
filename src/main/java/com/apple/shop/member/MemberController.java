@@ -3,7 +3,6 @@ package com.apple.shop.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -44,7 +43,7 @@ public class MemberController {
 
     @GetMapping("/my-page")
     public String myPage(Authentication auth) {
-        CustomUser result=(CustomUser)auth.getPrincipal();
+        customUser result=(customUser)auth.getPrincipal();
         System.out.println(result.displayName);
         return "mypage.html";
     }

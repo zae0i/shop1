@@ -1,6 +1,6 @@
 package com.apple.shop.sales;
 
-import com.apple.shop.member.CustomUser;
+import com.apple.shop.member.customUser;
 import com.apple.shop.member.Member;
 import com.apple.shop.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +27,7 @@ public class SalesController {
         sales.setItemName(title);
         sales.setPrice(price);
         sales.setCount(count);
-        CustomUser user = (CustomUser) auth.getPrincipal();
+        customUser user = (customUser) auth.getPrincipal();
         var member = new Member();
         member.setId(user.id);
         sales.setMember(member);

@@ -33,21 +33,8 @@ public class MyUserDetailsService implements UserDetailsService {
         authorities.add(new SimpleGrantedAuthority("일반유저"));
         var a=new CustomUser(user.getUsername(),user.getPassword(),authorities);
         a.displayName=user.getDisplayName();
+        a.id = user.getId();
         return a;
     }
 
-}
-
-public class CustomUser extends User{
-    public String displayName;
-    public Long id;
-
-    public CustomUser(
-            String username,
-            String password,
-            Collection<? extends GrantedAuthority> authorities
-    )
-    {
-        super(username, password, authorities);
-    }
 }

@@ -1,5 +1,6 @@
 package com.apple.shop.sales;
 
+import com.apple.shop.member.Member;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
