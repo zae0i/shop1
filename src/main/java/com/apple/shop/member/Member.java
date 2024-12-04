@@ -1,9 +1,14 @@
 package com.apple.shop.member;
 
 
+import com.apple.shop.sales.Sales;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,4 +22,8 @@ public class Member {
     public String username;
     public String displayName;
     public String password;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "member")
+    private List<Sales> sales = new ArrayList<>();
 }
